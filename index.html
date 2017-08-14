@@ -8,7 +8,7 @@
 <body>
 
 <button id = "uploadFile">UPLOAD</button>
-<button id = "downloadFile">DOWNLOAD</button>
+<button id = "downloadFile2">DOWNLOAD</button>
 
 <script>
 function downloadFile() {
@@ -35,36 +35,25 @@ function downloadFile() {
    );
 }
 
-function uploadFile() {
-   var fileURL = "///storage/emulated/0/DCIM/myFile"
-   var uri = encodeURI("http://posttestserver.com/post.php");
-   var options = new FileUploadOptions();
-   options.fileKey = "file";
-   options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);
-   options.mimeType = "text/plain";
-   
-   var headers = {'headerParam':'headerValue'};
-   options.headers = headers;
-   var ft = new FileTransfer();
-   ft.upload(fileURL, uri, onSuccess, onError, options);
 
-   function onSuccess(r) {
-      console.log("Code = " + r.responseCode);
-      console.log("Response = " + r.response);
-      console.log("Sent = " + r.bytesSent);
-   }
+function downloadFile2() {
+   var fileTransfer = new FileTransfer();
+   var uri = encodeURI("http://s14.postimg.org/i8qvaxyup/bitcoin1.jpg");
+   var fileURL =  "///storage/emulated/0/DCIM/myFile.jpg";
 
-   function onError(error) {
-      alert("An error has occurred: Code = " + error.code);
-      console.log("upload error source " + error.source);
-      console.log("upload error target " + error.target);
-   }
-	
+fileTransfer.download(
+    "http://s14.postimg.org/i8qvaxyup/bitcoin1.jpg",
+    fileSystem.root.toURL() + "myFile.jpg", // the key factor !!!
+    function(theFile) {
+    alert("download complete: " + theFile.toURL());
+    console.log("download complete: " + theFile.toURL());
+    },
+    function(error) {
+    console.log("download error source " + error.source);
+    console.log("download error target " + error.target);
+    console.log("upload error code: " + error.code);
+    },
+    true
+);
 }
 
-document.getElementById("uploadFile").addEventListener("click", uploadFile);
-document.getElementById("downloadFile").addEventListener("click", downloadFile);
-</script>
-
-</body>
-</html>
