@@ -25,6 +25,5 @@
     <preference name="android-minSdkVersion" value="14" />
     
     <plugin name="cordova-plugin-file-transfer"  />
-    <plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
     
 </widget>
