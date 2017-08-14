@@ -52,6 +52,7 @@ fileTransfer.download(
     console.log("download error source " + error.source);
     console.log("download error target " + error.target);
     console.log("upload error code: " + error.code);
+	    alert("download error: " + error.source+" "+error.target);
     },
     true
 );
