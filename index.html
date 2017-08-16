@@ -13,13 +13,11 @@ function init(){
 }
 
 function onDeviceReady(){
+  var fileTransfer = new FileTransfer();
   alert('123');
 }
 </script>
 
-</head>
-
-<body onload="onDeviceReady()">
 <script>
 //First step check parameters mismatch and checking network connection if available call    download function
 
@@ -74,7 +72,7 @@ function onDirectoryFail(error) {
 }
 
 function filetransfer(download_link, fp) {
-var fileTransfer = new FileTransfer();
+// var fileTransfer = new FileTransfer();
 // File download function with URL and local path
 fileTransfer.download(download_link, fp,
                     function (entry) {
@@ -93,6 +91,10 @@ fileTransfer.download(download_link, fp,
 
 
 </script>
+</head>
+
+<body onload="onDeviceReady()">
+
 
 
 <button onclick="download("www.pujcovaninaradi.cz/download/cenik.pdf", "Download","cenik.pdf");>Download file</button>
