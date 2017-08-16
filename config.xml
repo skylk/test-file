@@ -14,7 +14,6 @@
         PhoneGap Team
     </author>
     <content src="index.html" />
-    <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -24,7 +23,14 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     
+    
+    <access origin="*" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
+    
+    <plugin name="cordova-plugin-inappbrowser"  />
     <plugin name="cordova-plugin-file-transfer"  />
-    <plugin name="cordova-plugin-file"  />
+    <plugin name="cordova-plugin-file-opener"  /> 
+    <plugin name="cordova-plugin-whitelist"  />
     
 </widget>
