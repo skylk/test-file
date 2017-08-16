@@ -13,8 +13,10 @@ function init(){
 }
 
 function onDeviceReady(){
+  
   var fileTransfer = new FileTransfer();
-  alert('123');
+  alert(fileTransfer);
+   alert('123');
 }
 </script>
 
@@ -72,7 +74,7 @@ function onDirectoryFail(error) {
 }
 
 function filetransfer(download_link, fp) {
-// var fileTransfer = new FileTransfer();
+var fileTransfer = new FileTransfer();
 // File download function with URL and local path
 fileTransfer.download(download_link, fp,
                     function (entry) {
