@@ -25,5 +25,6 @@
     <preference name="android-minSdkVersion" value="14" />
     
     <plugin name="cordova-plugin-file-transfer"  />
+    <plugin name="cordova-plugin-file"  />
     
 </widget>
